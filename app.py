@@ -6,6 +6,9 @@ import joblib
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 
+# Load dataset
+data = pd.read_csv('C:/Users/USER/Dropbox/Clement/Course/Master in Data Science/Deakin University/SIG720 - Machine Learning/Tasks/Task5D/ParisHousing.csv')  
+
 # Title
 st.title("🏠 Paris Housing Price Predictor")
 
@@ -16,7 +19,7 @@ st.markdown("Enter the features of the house below to predict the **price** (in 
 squareMeters = st.number_input("Square Meters", min_value=10, max_value=100000, value=75000)
 numberOfRooms = st.number_input("Number of Rooms", min_value=1, max_value=50, value=5)
 floors = st.slider("Number of Floors", min_value=1, max_value=10, value=2)
-cityCode = st.selectbox("City Code", list(range(10)))
+cityCode = st.selectbox("City Code", sorted(data['cityCode'].unique()))
 cityPartRange = st.slider("City Part Range", min_value=1, max_value=10, value=5)
 numPrevOwners = st.slider("Number of Previous Owners", min_value=0, max_value=10, value=1)
 made = st.slider("Year Built", min_value=1900, max_value=2024, value=2000)
