@@ -6,9 +6,7 @@ import joblib
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 
-# Load dataset
-#data = pd.read_csv('C:/Users/USER/Dropbox/Clement/Course/Master in Data Science/Deakin University/SIG720 - Machine Learning/Tasks/Task5D/ParisHousing.csv')
-data = pd.read_csv('ParisHousing.csv')
+data = pd.read_csv("ParisHousing.csv")
 
 # Title
 st.title("🏠 Paris Housing Price Predictor")
